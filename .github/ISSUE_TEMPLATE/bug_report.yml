@@ -1,0 +1,94 @@
+name: Bug report
+description: Something does not work as the README describes
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. The more of this you can fill in, the faster the problem can be found.
+
+        **The console output answers most of the questions here.** Copy everything the script printed and paste it below.
+  - type: input
+    id: version
+    attributes:
+      label: Script version
+      description: From the file name.
+      placeholder: "v1.1.1"
+    validations:
+      required: true
+  - type: input
+    id: instrument
+    attributes:
+      label: Instrument ID
+      description: The model, serial number and firmware version the script printed.
+      placeholder: "HEWLETT-PACKARD,4263B,JP1KE01234,REV01.06"
+    validations:
+      required: true
+  - type: input
+    id: options
+    attributes:
+      label: Options before running
+      description: What the instrument had before - none, 001 only, or 002 only.
+      placeholder: "None"
+    validations:
+      required: false
+  - type: input
+    id: os
+    attributes:
+      label: Operating system
+      placeholder: "Windows 11 23H2 / Ubuntu 24.04 / macOS 14.5"
+    validations:
+      required: true
+  - type: input
+    id: python
+    attributes:
+      label: Python and PyVISA versions
+      description: From python --version and pip show pyvisa.
+      placeholder: "Python 3.12.4, PyVISA 1.14.1"
+    validations:
+      required: true
+  - type: input
+    id: visa
+    attributes:
+      label: VISA layer and GPIB adapter
+      description: The VISA software and its version, and the GPIB interface the instrument is on.
+      placeholder: "NI-VISA 2024 Q3, NI GPIB-USB-HS"
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Where did it go wrong?
+      options:
+        - "Finding the instrument on the bus"
+        - "Reading the serial number, firmware or options"
+        - "Reset and self test"
+        - "Writing the option codes"
+        - "Verifying the written data"
+        - "After rebooting, the options are not enabled"
+        - "Something else"
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened, and what did you expect?
+      description: Include any message the program or the instrument showed, word for word.
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: Console output
+      description: Paste everything the script printed.
+      render: text
+    validations:
+      required: false
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else
+      description: Self-test errors, photos of the display. Please do not attach calibration data, EEPROM or NVRAM images unless asked - they are specific to one instrument.
+    validations:
+      required: false

@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: README
+    url: https://github.com/JaredCabot/HP-Agilent-4263A-4263B-Option-Unlocker#readme
+    about: Requirements and what the script does.
+  - name: Full service tool
+    url: https://github.com/JaredCabot/HP-Agilent-4263A-4263B-Service-Tool#readme
+    about: Option unlock plus adjustment, verification and certificates for the 4263A and 4263B.
